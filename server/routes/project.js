@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router()
-const projectsController =  require('../controllers/projects')
+const projectsController =  require('../controllers/project')
 
 router.post('/', projectsController.uploadProject);
 router.patch('/', projectsController.updateProject);
