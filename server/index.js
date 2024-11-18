@@ -18,6 +18,15 @@ app.use(cors(corsOption))
 mongoose.connect(process.env.MONGODB_STRING);
 mongoose.connection.once('open', () => {console.log('Successfully connected to database')})
 
+const userRoutes = require('./routes/user');
+const projectRoutes = require('./routes/project');
+const postRoutes = require('./routes/post');
+
+app.use('/users', userRoutes);
+app.use('/projects', projectRoutes);
+app.use('/posts', postRoutes);
+
+
 
 app.listen(process.env.PORT, () => {console.log(`Running on PORT: ${process.env.PORT}`)})
 module.exports = {app, mongoose}
