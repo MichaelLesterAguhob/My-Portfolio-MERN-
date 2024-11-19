@@ -1,10 +1,17 @@
 
 const brcypt = require("bcryptjs")
 const User = require('../models/User');
-
+const {errorHandler} = require('../authentication')
 
 module.exports.register = async (req, res) => {
-    
+    const newUser = new User({
+        email: req.body.email,
+        password: brcypt.hashSync(req.body.password, 10)
+    })
+
+    newUser.save().then(user => {
+        res.status(201).send({success: true, user})
+    }).catch(error => errorHandler(error, req, res))
 } 
 
 module.exports.login = async (req, res) => {
