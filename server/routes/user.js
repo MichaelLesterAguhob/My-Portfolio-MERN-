@@ -1,14 +1,15 @@
 const express = require('express');
-const router = express.Router()
-const userController =  require('../controllers/user')
+const {verify} = require('../authentication');
+const userController =  require('../controllers/user');
+const router = express.Router();
 
 router.post('/register', userController.register);
 router.post('/login', userController.login);
-router.get('/', userController.getUserDetails);
-router.patch('/password', userController.updatePassword);
+router.get('/', verify, userController.getUserDetails);
+router.patch('/password', verify, userController.updatePassword);
 
-router.post('/resume', userController.uploadResume);
-router.patch('/resume', userController.updateResume);
+router.post('/resume', verify, userController.uploadResume);
+router.patch('/resume', verify, userController.updateResume);
 
 
 

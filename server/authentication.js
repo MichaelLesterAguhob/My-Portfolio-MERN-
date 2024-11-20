@@ -13,7 +13,7 @@ module.exports.createAccessToken = (user) => {
 
 
 module.exports.verify = (req, res, next) => {
-    const token = localStorage.getItem('token')
+    let token = req.headers.authorization
     if(typeof token === 'undefined') {
         return res.status(400).send({auth: "Verification failed. No token."})
     }   
