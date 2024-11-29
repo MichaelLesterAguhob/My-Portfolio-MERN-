@@ -4,10 +4,16 @@ const User = require('../models/User');
 const {errorHandler, createAccessToken} = require('../authentication')
 
 module.exports.register = async (req, res) => {
+    
     const newUser = new User({
         email: req.body.email,
         password: brcypt.hashSync(req.body.password, 10)
     })
+
+    const isExisting = await User.findOne({email: req.body.email});
+    if(isExisting) {
+        return res.status(409).send({message: "Email already exists"});
+    }
 
     newUser.save().then(user => {
         res.status(201).send({success: true, user})
@@ -36,7 +42,7 @@ module.exports.getUserDetails = async (req, res) => {
     const accountDetails = await User.findById(id);
 
     if(!accountDetails) {
-        return res.status(200).send({success: false, message: "Error on getting user details"})
+        return res.status(400).send({success: false, message: "Error on getting user details"})
     } else {
         res.status(200).send({success: true, user: accountDetails})
     }

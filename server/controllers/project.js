@@ -32,9 +32,9 @@ module.exports.updateProject = async (req, res) => {
 
         const updatedProject = await Project.findByIdAndUpdate(projectId, updatedDetails, {new:true});
         if(updatedProject) {
-            res.status(201).send({success: true, updatedProject});
+            res.status(200).send({success: true, updatedProject});
         } else {
-            res.status(201).send({success: false, message: "Failed to update project details"});
+            res.status(400).send({success: false, message: "Failed to update project details"});
         }
     } catch (error) {
         errorHandler(error, req, res);
@@ -55,11 +55,30 @@ module.exports.getAllProjects = async (req, res) => {
 }
 
 module.exports.deleteProject = async (req, res) => {
-    res.send('deleteProject is working')   
+    try {
+        const projectId = req.params.projectId;
+        const deletedProject = await Project.findByIdAndDelete(projectId);
+        if(deletedProject) {
+            res.status(200).send({success: true, message: "Project Deleted Successfully"});
+        } else {
+            res.status(404).send({success: false, message: "Failed to delete a project"});
+        }
+    } catch (error) {
+        errorHandler(error, req, res);
+    }
 }
 
 module.exports.getProject = async (req, res) => {
-    res.send('getProject is working')   
+    try{
+        const projects = await Project.findById(req.params.projectId);
+        if(projects) {
+            res.status(200).send({success: true, projects});
+        } else {
+            res.status(404).send({success: false, message: "No project found"});
+        }
+    } catch(error) {
+        errorHandler(error, req, res);
+    }   
 }
 
 

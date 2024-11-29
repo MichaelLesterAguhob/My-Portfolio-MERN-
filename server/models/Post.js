@@ -13,7 +13,7 @@ const postSchema = mongoose.Schema({
         {
             path: {
                 type: String,
-                default: null
+                required: false
             }
         }
     ]
