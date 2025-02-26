@@ -10,13 +10,13 @@ import Footer from './components/Footer.js';
 function App() {
   return (
     <Router>
-        {/* <div> */}
+        <div className='min-h-screen'>
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
             </Routes>
             <Footer />
-        {/* </div> */}
+        </div>
     </Router>
   );
 }
