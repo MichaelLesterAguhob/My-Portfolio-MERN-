@@ -1,24 +1,32 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
 const Navbar = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className={`bg-gray-800 p-4 shadow-lg ${isMenuOpen ? 'absolute w-full' : ''}`}>
+    <nav className={`bg-gray-800 p-4 shadow-lg w-full fixed top-0`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-white text-2xl font-bold">
-          <a href="/">MLCA Portfolio</a>
+          <a href="/">MLCA</a>
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex space-x-6 text-white">
-          <a href="/" className="hover:text-gray-400">Home</a>
-          <a href="#about" className="hover:text-gray-400">About</a>
-          <a href="#services" className="hover:text-gray-400">Services</a>
-          <a href="#contact" className="hover:text-gray-400">Contact</a>
+        <div className="hidden md:flex space-x-6 text-white text-xl">
+          <a href="#home" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
+            Home
+          </a>
+          <a href="#projects" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
+            Projects
+          </a>
+          <a href="#services" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
+            Services
+          </a>
+          <a href="#blog" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
+            Blog
+          </a>
         </div>
 
         {/* Mobile Hamburger Menu Button */}
@@ -43,19 +51,30 @@ const Navbar = () => {
         </button>
       </div>
 
-
       {/* Mobile Navigation Links */}
       <div
-        className={`sm:hidden xs:hidden bg-gray-800 text-white space-y-4 p-4 transition-all duration-500 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100 transform translate-y-0' : 'max-h-0 opacity-0 transform translate-y-4'}`}
-        style={{ overflow: 'hidden' }}
+        className={`lg:hidden bg-gray-800 text-white space-y-4 p-4 transition-all duration-500 ease-in-out ${
+          isMenuOpen
+            ? "max-h-96 opacity-100 transform translate-y-0"
+            : "hidden max-h-0 opacity-0 transform translate-y-4"
+        }`}
+        style={{ overflow: "hidden" }}
       >
-        <a href="/" className="block hover:text-gray-400">Home</a>
-        <a href="#about" className="block hover:text-gray-400">About</a>
-        <a href="#services" className="block hover:text-gray-400">Services</a>
-        <a href="#contact" className="block hover:text-gray-400">Contact</a>
+        <a href="#home" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
+          Home
+        </a>
+        <a href="#projects" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
+          Projects
+        </a>
+        <a href="#services" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
+          Services
+        </a>
+        <a href="#blog" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
+          Blog
+        </a>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
