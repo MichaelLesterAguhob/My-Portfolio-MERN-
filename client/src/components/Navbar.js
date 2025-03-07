@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-white text-2xl font-bold">
-          <a href="/">MLCA</a>
+          <img src='./favicon-32x32.png' /> <a href="/">MLCA</a>
         </div>
 
         {/* Desktop Navigation Links */}
