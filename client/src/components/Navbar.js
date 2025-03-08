@@ -18,11 +18,14 @@ const Navbar = () => {
           <a href="#home" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
             Home
           </a>
+          <a href="#aboutMe" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
+            AboutMe
+          </a>
+          <a href="#skills" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
+            Skills
+          </a>
           <a href="#projects" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
             Projects
-          </a>
-          <a href="#services" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
-            Services
           </a>
           <a href="#blog" className="hover:text-gray-400 hover:underline" onClick={closeMenu}>
             Blog
@@ -63,11 +66,14 @@ const Navbar = () => {
         <a href="#home" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
           Home
         </a>
+        <a href="#aboutMe" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
+          AboutMe
+        </a>
+        <a href="#skills" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
+          Skills
+        </a>
         <a href="#projects" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
           Projects
-        </a>
-        <a href="#services" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
-          Services
         </a>
         <a href="#blog" className="block hover:text-gray-400 hover:underline" onClick={closeMenu}>
           Blog
