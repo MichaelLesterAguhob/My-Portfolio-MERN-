@@ -1,9 +1,10 @@
 import React from "react";
-import Home from "./Home.js";
-import AboutMe from "./AboutMe.js";
-import Skills from "./Skills.js";
-import Navbar from "../components/Navbar.js";
-import Footer from "../components/Footer.js"; 
+import Home from "./Home.jsx";
+import AboutMe from "./AboutMe.jsx";
+import Skills from "./Skills.jsx";
+import Navbar from "../components/Navbar.jsx";
+import Projects from "./Projects.jsx";
+import Footer from "../components/Footer.jsx"; 
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
         <Home />
         <AboutMe />
         <Skills />
+        <Projects />
         <Footer />
     </div>
   );

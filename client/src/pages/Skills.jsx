@@ -3,8 +3,8 @@ import React from "react";
 const Skills = () => {
   return (
     <div id="skills" className="min-h-[calc(100vh-96px)] flex flex-col justify-start items-center p-2">
-      <h1 className="bg-blue-600 rounded-xl text-white p-5 w-full md:w-fit h-fit mb-4 text-2xl font-bold">
-        Have Experience on ff tech:
+      <h1 className="bg-blue-600 rounded-xl text-white p-3 w-full md:w-fit h-fit mb-4 text-2xl font-bold">
+        Have Experience on the following:
       </h1>
       
       <div className="p-4 w-full flex-grow grid md:grid md:grid-cols-3">

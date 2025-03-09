@@ -32,7 +32,7 @@ const Home = () => {
             {text} &nbsp;
           </h1>
         </div>
-        <p className="w-full p-4 text-white text-2xl text-center md:text-justify">Hi👋 I'm Michael and I am desktop software and web developer and <strong>I'm open for an entry level job.</strong> I love coding, building a software or website that let me turned ideas into reality.</p>
+        <p className="w-full p-2 text-white text-2xl text-justify">Hi👋 I'm Michael and I am desktop software and web developer and <strong>I'm open for an entry level job.</strong> I love coding, building a software or website that let me turned ideas into reality.</p>
       </div>
     </div>
   );
