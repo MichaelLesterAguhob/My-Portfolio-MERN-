@@ -13,19 +13,20 @@ const AboutMe = () => {
       <div className="text-white p-2 flex gap-4 flex-wrap justify-center">
         <div className=" h-fit p-2 w-1/4  min-w-[300px] min-h-[250px] max-h-[700px] overflow-auto">
           <h1 className="p-2 border-b mb-5 tracking-[5px] flex items-center">EDUCATION <span className="text-2xl">🎓</span></h1>
-          <p>I am graduate of Bachelor of Science in Information Technology from Colegio De San Gabriel Arcangel Inc.</p><br></br>
-          <p>With Academic Proficiency and Best in Thesis Award</p>
+          <p>👨‍🎓 I am graduate of Bachelor of Science in Information Technology from Colegio De San Gabriel Arcangel Inc. Graduated with Academic Proficiency and Best in Thesis Award</p><br></br>
+
+          <p>💻 I have finished an intensive Coding Bootcamp at ZUITT with a course package of MERN Stack and I graduated as Full Stack Web Developer.</p>
         </div>
 
         <div className=" h-fit p-2 w-2/4 min-w-[300px] min-h-[250px] max-h-[600px] overflow-auto">
           <h1 className="p-2 border-b mb-5 tracking-[5px]">EXPERIENCES <span className="text-2xl">📌</span></h1>
-          <p>- When I was in college, I explored different programming languages such as java, vb.net, and PHP. I've programmed different app such as mini games using java and desktop software with database using vb.</p><br></br>
+          <p>💻 When I was in college, I explored different programming languages such as java, vb.net, and PHP. I've programmed different app such as mini games using java and desktop software with database using vb.</p><br></br>
 
-          <p>- I've built our Capstone System, a Repository for the CPRI of our School, using VB.net and received a <strong className="italic">Best in Thesis Award</strong></p><br></br>
+          <p>💻 I've built our Capstone System, a Repository for the CPRI of our School, using VB.net and received a <strong className="italic">Best in Thesis Award</strong></p><br></br>
 
-          <p>- I have Freelance Experience where I built a Library Management System using VB.net for my client and get paid. I've also solved bugs encountered by my classmates on their capstone system then I get paid.</p><br></br>
+          <p>💻 I have Freelance Experience where I built a Library Management System using VB.net for my client and get paid. I've also solved bugs encountered by my classmates on their capstone system then I get paid.</p><br></br>
 
-          <p>- During my OJT at House of Representatives, I've built a Web-based Bulletin System using PHP, JS, CSS, HTML, and BOOTSTRAP for ICTS department to streamline their process of making announcements, reminders, and etc.</p>
+          <p>💻 During my OJT at House of Representatives, I've built a Web-based Bulletin System using PHP, JS, CSS, HTML, and BOOTSTRAP for ICTS department to streamline their process of making announcements, reminders, and etc.</p>
         </div>
       
       </div>

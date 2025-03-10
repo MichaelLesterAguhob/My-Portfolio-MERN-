@@ -10,9 +10,9 @@ const Carousel = ({ children: slides }) => {
     setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
   return (
-    <div className="w-full overflow-hidden relative flex">
+    <div className="w-full md:max-w-[420px] overflow-hidden relative flex">
       <div
-        className="w-full flex  ease-out duration-500 h-full"
+        className="w-full flex ease-out duration-500 h-full"
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides}
