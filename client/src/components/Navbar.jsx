@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if(location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if(element) {
+        element.scrollIntoView({behavior: "smooth"})
+      }
+    }
+  }, [location])
+
+
   return (
-    <nav className={`bg-gray-800 p-4 shadow-lg w-full fixed top-0 z-10`}>
+    <nav className={`bg-gray-800 p-4 shadow-lg w-full fixed top-0 z-20`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-white text-2xl font-bold">
@@ -15,48 +28,48 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 text-white text-xl">
-          <a
-            href="#home"
+          <NavLink
+            to="/home#hero"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Home
-          </a>
-          <a
-            href="#aboutMe"
+          </NavLink>
+          <NavLink
+            to="/home#aboutMe"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             AboutMe
-          </a>
-          <a
-            href="#skills"
+          </NavLink>
+          <NavLink
+            to="/home#skills"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Skills
-          </a>
-          <a
-            href="#projects"
+          </NavLink>
+          <NavLink
+            to="/home#projects"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Projects
-          </a>
-          <a
-            href="#contact"
+          </NavLink>
+          <NavLink
+            to="/home#contact"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Contact
-          </a>
-          <a
-            href="#blog"
+          </NavLink>
+          <NavLink
+            to="/blog"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Blog
-          </a>
+          </NavLink>
         </div>
 
         {/* Mobile Hamburger Menu Button */}
@@ -90,48 +103,48 @@ const Navbar = () => {
         }`}
         style={{ overflow: "hidden" }}
       >
-        <a
-          href="#home"
+        <NavLink
+          to="/home#hero"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Home
-        </a>
-        <a
-          href="#aboutMe"
+        </NavLink>
+        <NavLink
+          to="/home#aboutMe"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           AboutMe
-        </a>
-        <a
-          href="#skills"
+        </NavLink>
+        <NavLink
+          to="/home#skills"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Skills
-        </a>
-        <a
-          href="#projects"
+        </NavLink>
+        <NavLink
+          to="/home#projects"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Projects
-        </a>
-        <a
-          href="#contact"
+        </NavLink>
+        <NavLink
+          to="/home#contact"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Contact
-        </a>
-        <a
-          href="#blog"
+        </NavLink>
+        <NavLink
+          to="/blog"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Blog
-        </a>
+        </NavLink>
       </div>
     </nav>
   );

@@ -21,9 +21,11 @@ code {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(151, 148, 148);
+  background-color: blue;
 }
 
 ::-webkit-scrollbar{
   width:7px;
   background-color: gray;
+  background-color: blue;
 }
