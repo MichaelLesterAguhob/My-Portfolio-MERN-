@@ -29,35 +29,35 @@ const Navbar = () => {
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 text-white text-xl">
           <NavLink
-            to="/home#hero"
+            to="/#home"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Home
           </NavLink>
           <NavLink
-            to="/home#aboutMe"
+            to="/#aboutMe"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             AboutMe
           </NavLink>
           <NavLink
-            to="/home#skills"
+            to="/#skills"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Skills
           </NavLink>
           <NavLink
-            to="/home#projects"
+            to="/#projects"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             Projects
           </NavLink>
           <NavLink
-            to="/home#contact"
+            to="/#contact"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
@@ -104,35 +104,35 @@ const Navbar = () => {
         style={{ overflow: "hidden" }}
       >
         <NavLink
-          to="/home#hero"
+          to="/#home"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Home
         </NavLink>
         <NavLink
-          to="/home#aboutMe"
+          to="/#aboutMe"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           AboutMe
         </NavLink>
         <NavLink
-          to="/home#skills"
+          to="/#skills"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Skills
         </NavLink>
         <NavLink
-          to="/home#projects"
+          to="/#projects"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
           Projects
         </NavLink>
         <NavLink
-          to="/home#contact"
+          to="/#contact"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >

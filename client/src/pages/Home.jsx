@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div
-      id="hero"
+      id="home"
       className="min-h-[95vh] mt-[65px] p-2 flex flex-col justify-center items-center md:grid grid-flow-col grid-cols-5"
     >
       <div className="w-full md:h-2/4 md:col-span-2 flex justify-center md:justify-end items-end md:items-center p-4 overflow-hidden">
