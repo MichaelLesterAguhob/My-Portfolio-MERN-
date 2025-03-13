@@ -15,7 +15,12 @@ const AboutMe = () => {
           <h1 className="p-2 border-b mb-5 tracking-[5px] flex items-center">EDUCATION <span className="text-2xl">🎓</span></h1>
           <p>👨‍🎓 I am graduate of Bachelor of Science in Information Technology from Colegio De San Gabriel Arcangel Inc. Graduated with Academic Proficiency and Best in Thesis Award</p><br></br>
 
-          <p>💻 I have finished an intensive Coding Bootcamp at ZUITT with a course package of MERN Stack and I graduated as Full Stack Web Developer.</p>
+          <p>💻 I have finished an intensive Coding Bootcamp at ZUITT with a course package of MERN Stack and I graduated as Full Stack Web Developer.</p> <br />
+
+          <h3>BOOTCAMP CERTIFICATES📄</h3>
+          <a href="https://share.zertify.zuitt.co/certificate/18aa4ed2-4188-4945-836a-fb6fda660c93/" target="_blank" className="text-blue-500 hover:underline">Front End Course</a> <br />
+          <a href="https://share.zertify.zuitt.co/certificate/32925616-94c3-44bb-9c20-067ab555bcc9/" target="_blank" className="text-blue-500 hover:underline">Back End Course</a><br />
+          <a href="#" className="text-blue-500 hover:underline">Full-Stack - On Process</a>
         </div>
 
         <div className=" h-fit p-2 w-2/4 min-w-[300px] min-h-[250px] max-h-[600px] overflow-auto">

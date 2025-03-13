@@ -96,6 +96,7 @@ const Footer = () => {
         <h1 className="border-b w-[95%] font-extrabold text-xl mb-4">
           Project Quick Links
         </h1>
+        <span className="text-red-600">Below is under development</span>
         <ul className="leading-relaxed">
           <li className="hover:cursor-pointer hover:underline">
             Web-based Bulletin
