@@ -22,7 +22,7 @@ const Projects = () => {
           Projects
         </h1>
       </div>
-        <h3 className="mb-5">Below is on progress </h3>
+        <h3 className="mb-5 text-red-500">Below is under development </h3>
 
       {/* Carousel */}
       <div className="flex flex-col md:flex-row gap-5 overflow-x-scroll w-[95%]">

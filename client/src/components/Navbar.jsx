@@ -23,11 +23,18 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="text-white text-2xl font-bold">
-          <img src="./favicon-32x32.png" /> <a href="/">MLCA</a>
+          <img src="/favicon-32x32.png" /> <a href="/">MLCA</a>
         </div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 text-white text-xl">
+          {/* <NavLink
+            to="/login/mlca"
+            className="hover:text-gray-400 hover:underline"
+            onClick={closeMenu}
+          >
+            login
+          </NavLink> */}
           <NavLink
             to="/#home"
             className="hover:text-gray-400 hover:underline"
@@ -64,7 +71,7 @@ const Navbar = () => {
             Contact
           </NavLink>
           <NavLink
-            to="/blog"
+            to="/blog#main"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
@@ -139,7 +146,7 @@ const Navbar = () => {
           Contact
         </NavLink>
         <NavLink
-          to="/blog"
+          to="/blog#main"
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >

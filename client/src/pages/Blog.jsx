@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Blog = () => {
   return (
     <>
-      <div className="min-h-[95vh] mt-[98px] border border-white bg-slate-700 p-2">
-        Blog
+      <div id="main" className="min-h-[95vh] mt-[80px] border border-white bg-slate-700 p-2 relative">
+        Blogs
       </div>
     </>
   );

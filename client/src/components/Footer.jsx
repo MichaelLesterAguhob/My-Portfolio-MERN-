@@ -116,7 +116,7 @@ const Footer = () => {
 
       <div className="col-span-4 mt-8">
         <img
-          src="./favicon-32x32.png"
+          src="/favicon-32x32.png"
           alt="logo"
           className="w-[30px] h-[30px]"
         />
