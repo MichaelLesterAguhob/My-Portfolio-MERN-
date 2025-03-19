@@ -28,13 +28,13 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex space-x-6 text-white text-xl">
-          {/* <NavLink
+          <NavLink
             to="/login/mlca"
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
             login
-          </NavLink> */}
+          </NavLink>
           <NavLink
             to="/#home"
             className="hover:text-gray-400 hover:underline"
