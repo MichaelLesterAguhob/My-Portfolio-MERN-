@@ -103,7 +103,7 @@ const Login = () => {
     }
   };
 
-  return user.id !== null && localStorage.getItem("token") !== null ? (
+  return user._id !== null && localStorage.getItem("token") !== null ? (
     <Navigate to="/admin-dashboard" />
   ) : (
     <div id="main" className="min-h-[95vh] mt-[73px] bg-slate-700 p-2 flex">
@@ -112,33 +112,33 @@ const Login = () => {
           login(e);
         }}
         id="login-form "
-        className="h-[80vh] md:w-3/4 min-w-[300px] max-w-[500px] m-auto rounded-lg flex flex-col justify-start items-center  bg-slate-100"
+        className="h-[80vh] md:w-3/4 min-w-[300px] max-w-[500px] m-auto rounded-lg flex flex-col justify-start items-center  bg-slate-500"
       >
         <h1 className="text-3xl p-4 text-center text-black font-bold mt-8">
           LOGIN
         </h1>
 
-        <label htmlFor="username" className="text-gray-700 mt-[60px] w-[95%]">
+        <label htmlFor="username" className="text-black mt-[60px] w-[95%]">
           Username
         </label>
         <input
           type="text"
           name="username"
           id="username"
-          className="h-[60px] w-[95%] p-1 rounded-md bg-slate-300 text-gray-700 font-bold text-xl"
+          className="h-[60px] w-[95%] p-1 rounded-md bg-slate-700 text-white font-bold text-xl"
           value={username}
           onChange={(e) => setUname(e.target.value)}
           placeholder="Enter your username"
           required
         />
-        <label htmlFor="password" className="text-gray-700 w-[95%] mt-[40px]">
+        <label htmlFor="password" className="text-black w-[95%] mt-[40px]">
           Password
         </label>
         <input
           type={`${showPassword ? "text" : "password"}`}
           name="password"
           id="password"
-          className="h-[60px] w-[95%] p-1 rounded-md bg-slate-300 text-gray-700 font-bold text-xl"
+          className="h-[60px] w-[95%] p-1 rounded-md bg-slate-700 text-white font-bold text-xl"
           value={password}
           onChange={(e) => setPass(e.target.value)}
           placeholder="Enter your password"
@@ -146,7 +146,7 @@ const Login = () => {
         />
         <button
           type="button"
-          className="text-blue-600 hover:underline w-[95%] text-right pr-2 mt-2"
+          className="text-blue-900 hover:underline w-[95%] text-right pr-2 mt-2"
           onClick={toggleShowPass}
         >
           {showPassword ? "Hide" : "Show"} Password

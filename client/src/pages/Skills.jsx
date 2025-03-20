@@ -7,8 +7,8 @@ const Skills = () => {
         Have Experience on the following:
       </h1>
       
-      <div className="p-4 w-full flex-grow grid md:grid md:grid-cols-3">
-        <div className="p-4 flex flex-wrap gap-3 justify-center">
+      <div className="p-4 w-full flex-grow grid md:grid md:grid-cols-3 gap-4">
+        <div className="bg-slate-600 rounded-[10px] p-2 flex flex-wrap gap-3 justify-center">
           <h1 className="text-center p-2 text-xl text-white w-full h-fit ">Front End</h1>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK6sMfLmRjh2jzr0fZKfxKnczeq6Qu-uyPi613_ZtUjVj4JNmW26pGxB0Bgu3h_MErxcI" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu4l0glyq5Q4dWBzDcfl_NUXgRTVMm6SW5ew&s" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
@@ -18,7 +18,7 @@ const Skills = () => {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpngGRjYX1ca7qAADU3K6eGLj7ShQE3L2otdzfryl_Y9Ht2QRoQKYQbsXd36XIxMbYOw0" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
         </div>
 
-        <div className="p-4 flex flex-wrap gap-3 justify-center">
+        <div className="bg-slate-600 rounded-[10px] p-2 flex flex-wrap gap-3 justify-center">
           <h1 className="text-center p-2 text-xl text-white w-full h-fit ">Back End</h1>
           <img src="https://www.edureka.co/blog/wp-content/uploads/2019/08/node-logo.png" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
           <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2Fhpg6if7btrwilqkidqbe.png" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
@@ -28,7 +28,7 @@ const Skills = () => {
           <img src="https://studentprojectguide.com/wp-content/uploads/2019/09/VB.NET-Projects-bundle-1.jpg" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
         </div>
 
-        <div className="p-4 flex flex-wrap gap-3 justify-center">
+        <div className="bg-slate-600 rounded-[10px] p-2 flex flex-wrap gap-3 justify-center">
           <h1 className="text-center p-2 text-xl text-white w-full h-fit ">Others</h1>
           <img src="https://sourcebae.com/blog/wp-content/uploads/2023/09/maxresdefault-44.jpg" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbrSmJ1U6_Fu_KDFstr6PYPpFDmmza6UeckmxPrqm-d1kAhypIP2fEMpdVOc5-x0r4uNY" alt="tech image" className="w-[25%] h-[15%] min-h-[50px] min-w-[58px] bg-white rounded-lg"/>
