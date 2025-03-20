@@ -34,7 +34,7 @@ const Carousel = ({ children: slides }) => {
       <div className="indicators absolute inset-5 flex justify-center items-end gap-2">
           {
             slides.map((_, i) => (
-              <div className={`transition-all rounded-full w-3 h-3 bg-white ${curr === i ? "p-2" : "opacity-50"}`}></div>
+              <div key={i} className={`transition-all rounded-full w-3 h-3 bg-white ${curr === i ? "p-2" : "opacity-50"}`}></div>
             ))
           }
       </div>

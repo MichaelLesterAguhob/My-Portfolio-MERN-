@@ -29,8 +29,8 @@ const Projects = () => {
 
         <div className="w-fit md:min-w-[385px] max-w-[420px]  md:w-1/3 bg-slate-600">
           <Carousel>
-            {slides.map((s) => (
-              <img src={s} className="w-[100%] h-[100%] my-auto mx-auto" />
+            {slides.map((s, index) => (
+              <img src={s} className="w-[100%] h-[100%] my-auto mx-auto" key={index}/>
             ))}
           </Carousel>
         </div>
