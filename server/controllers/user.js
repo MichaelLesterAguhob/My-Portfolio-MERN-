@@ -33,7 +33,7 @@ module.exports.login = async (req, res) => {
     const account = await User.findOne({ email });
 
     if (!account) {
-      return res.status(200).send({ success: false, message: "Email doesn't exists" });
+      return res.status(400).send({ success: false, message: "Email doesn't exists" });
     }
 
     const isPasswordMatched = brcypt.compareSync(password, account.password);
@@ -41,7 +41,7 @@ module.exports.login = async (req, res) => {
     if (isPasswordMatched) {
       return res.status(201).send({ success: true, access: createAccessToken(account) });
     } else {
-      return res.status(200).send({ success: false, message: "Incorrect Password" });
+      return res.status(401).send({ success: false, message: "Incorrect Password" });
     }
   } catch (error) {
     errorHandler(error, req, res);

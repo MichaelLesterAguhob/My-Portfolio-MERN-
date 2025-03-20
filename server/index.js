@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 const corsOption = ({
-    origin: ['http://localhost:8000', 'http://localhost:3000'],
+    origin: ['http://localhost:8000', 'http://localhost:3000', 'https://michael-lester-aguhob-portfolio.vercel.app/'],
     credentials: true,
     optionsSuccessStatus: 200
 })
