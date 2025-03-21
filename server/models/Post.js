@@ -9,6 +9,10 @@ const postSchema = mongoose.Schema({
         type: String,
         required: [true, 'Content is required']
     },
+    projectLink: {
+        type: String,
+        required: [true, 'Project Link is required']
+    },
     photos: [
         {
             path: {
