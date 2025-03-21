@@ -4,6 +4,10 @@ import Swal from "sweetalert2";
 import UserContext from "../userContext";
 
 const Login = () => {
+
+  const API_BASE_URL = process.env.NODE_ENV ? process.env.REACT_APP_API_BASE_URL_DEV : process.env.REACT_APP_API_BASE_URL;
+  console.log(API_BASE_URL);
+
   const [username, setUname] = useState("");
   const [password, setPass] = useState("");
   const [showPassword, setShowPass] = useState(false);
@@ -21,7 +25,7 @@ const Login = () => {
       e.preventDefault();
 
       let loginResponse = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/users/login`,
+        `${API_BASE_URL}/users/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -70,7 +74,7 @@ const Login = () => {
   const getUserDetails = async () => {
     try {
       const getUserDetailsResponse = await fetch(
-        `${process.env.REACT_APP_API_BASE_URL}/users/getUserDetails`,
+        `${API_BASE_URL}/users/getUserDetails`,
         {
           method: "GET",
           headers: {
