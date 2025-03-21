@@ -6,7 +6,6 @@ import UserContext from "../userContext";
 const Login = () => {
 
   const API_BASE_URL = process.env.NODE_ENV === "development" ? process.env.REACT_APP_API_BASE_URL_DEV : process.env.REACT_APP_API_BASE_URL;
-  console.log(API_BASE_URL);
 
   const [username, setUname] = useState("");
   const [password, setPass] = useState("");
@@ -99,7 +98,6 @@ const Login = () => {
         setUser({
           id: respo.user._id
         })
-        console.log(respo.user._id);
       }
 
     } catch (error) {
