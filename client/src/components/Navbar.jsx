@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import UserContext from "../userContext";
 
 const Navbar = () => {
+  const { user } = useContext(UserContext);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -9,14 +12,13 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if(location.hash) {
+    if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
-      if(element) {
-        element.scrollIntoView({behavior: "smooth"})
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [location])
-
+  }, [location]);
 
   return (
     <nav className={`bg-gray-800 p-4 shadow-lg w-full fixed top-0 z-20`}>
@@ -77,6 +79,15 @@ const Navbar = () => {
           >
             Blog
           </NavLink>
+
+          {localStorage.getItem("token") !== null ? (
+            <NavLink
+              to={"/logout"}
+              className="text-red-500 rounded hover:bg-red-500 hover:text-white"
+            >
+              LogOut
+            </NavLink>
+          ) : null}
         </div>
 
         {/* Mobile Hamburger Menu Button */}
@@ -152,6 +163,15 @@ const Navbar = () => {
         >
           Blog
         </NavLink>
+
+        {localStorage.getItem("token") !== null ? (
+            <NavLink
+              to={"/logout"}
+              className="block py-2 text-red-500 rounded hover:bg-red-500 hover:text-white"
+            >
+              LogOut
+            </NavLink>
+          ) : null}
       </div>
     </nav>
   );
