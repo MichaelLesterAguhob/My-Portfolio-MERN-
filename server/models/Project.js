@@ -9,7 +9,7 @@ const projectSchema = mongoose.Schema({
         type: String,
         required: [true, 'Description is required']
     },
-    link: {
+    projectLink: {
         type: String,
         default: 'None'
     },

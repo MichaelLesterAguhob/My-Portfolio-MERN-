@@ -1,19 +1,74 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const Project = () => {
+  const API_BASE_URL = process.env.NODE_ENV === "development" ? process.env.REACT_APP_API_BASE_URL_DEV : process.env.REACT_APP_API_BASE_URL;
   const [addProjBtn, setAddProjBtn] = useState(false);
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [postLink, setProjectLink] = useState("");
+  const [projectLink, setProjectLink] = useState("");
+  const [saving, setSaving] = useState(false);
 
+  //DISABLING AND ENABLING ADD PROJECT BUTTON
   useEffect(() => {
-    if (title && description && postLink) {
+    if (title && description && projectLink) {
       setAddProjBtn(true);
     } else {
       setAddProjBtn(false);
     }
-  }, [title, description, postLink]);
+  }, [title, description, projectLink]);
+
+  // ADDING PROJECT DATA
+  const addProject = async() => {
+    setSaving(true);
+    try {
+        const addProjectRespo = await fetch(`${API_BASE_URL}/projects/`, {
+          method: 'POST',
+          headers: {
+            'Content-Type' : 'application/json',
+          },
+          body: JSON.stringify({
+            title: title.trim(),
+            description: description.trim(),
+            projectLink: projectLink.trim()
+          })
+        })
+
+        const respo = await addProjectRespo.json();
+
+        // Determine if status code is not OK
+        if(!addProjectRespo.ok) {
+            Swal.fire({
+              icon:'error',
+              title: "Error Occurred",
+              text: respo.message,
+              timer: 2000
+            })
+            console.log(respo.error || respo.message);
+            return;
+        }
+
+        if(respo) {
+          Swal.fire({
+            icon:'success',
+            text: respo.message,
+            timer: 2000
+          })
+          setTitle("");
+          setDescription("");
+          setProjectLink("");
+        }
+    } catch (error) {
+      Swal.fire({
+        icon:'error',
+        text: "Unexpected Error Occurred",
+        timer: 2000
+      })
+      console.log(error)
+    } finally {
+      setSaving(false);
+    }
+  }
 
   return (
     <div className="manage-projects bg-slate-600 p-2 mt-4 rounded-[10px]">
@@ -22,9 +77,10 @@ const Project = () => {
             <button
               type="button"
               className="btn btn-accent text-black"
-              disabled={!addProjBtn}
+              disabled={!addProjBtn || saving}
+              onClick={addProject}
             >
-              Add Project
+              {saving ? "Saving..." : "Add Project"}
             </button>
           </div>
 
@@ -62,7 +118,7 @@ const Project = () => {
               name="link"
               id="link"
               className="rounded bg-slate-300 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-[97%] p-1 m-1"
-              value={postLink}
+              value={projectLink}
               onChange={(e) => {
                 setProjectLink(e.target.value);
               }}

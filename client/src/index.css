@@ -29,3 +29,8 @@ code {
   background-color: gray;
   background-color: blue;
 }
+
+
+#description, #content {
+  max-height: 300px;
+}

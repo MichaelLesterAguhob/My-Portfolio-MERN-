@@ -8,11 +8,11 @@ module.exports.uploadProject = async (req, res) => {
         const newProject = new Project({
             title: req.body.title,
             description: req.body.description,
-            link: req.body.link
+            projectLink: req.body.projectLink
         });
         const savedProject = await newProject.save();
         if(savedProject) {
-            res.status(201).send({success: true, savedProject});
+            res.status(201).send({success: true, message: "Added Successfully"});
         } else {
             res.status(201).send({success: false, message: "Failed to save new project"});
         }

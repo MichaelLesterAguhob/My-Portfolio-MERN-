@@ -3,11 +3,11 @@ import Swal from "sweetalert2";
 
 const BlogPost = () => {
   const API_BASE_URL = process.env.NODE_ENV === "development" ? process.env.REACT_APP_API_BASE_URL_DEV : process.env.REACT_APP_API_BASE_URL
-  
   const [addPostBtn, setAddPostBtn] = useState(false);
   const [postTitle, setPostTitle] = useState("");
   const [content, setContent] = useState("");
   const [postProjectLink, setPostProjLink] = useState("");
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (postTitle && content && postProjectLink) {
@@ -19,6 +19,8 @@ const BlogPost = () => {
 
   // SAVING DATA TO DATABASE
   const addPost = async() => {
+    setSaving(true);
+
     try {
       const addPostRespo = await fetch(`${API_BASE_URL}/posts`, {
         method: 'POST',
@@ -26,9 +28,9 @@ const BlogPost = () => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          postTitle: postTitle,
-          content: content,
-          postProjectLink: postProjectLink
+          postTitle: postTitle.trim(),
+          content: content.trim(),
+          projectLink: postProjectLink.trim()
         })
       })
 
@@ -38,20 +40,31 @@ const BlogPost = () => {
           icon: 'error',
           title: "Error Occurred",
           text: respo.message,
-          timer: 3000
+          timer: 2000
         })
+        console.log(respo.error);
         return;
       } 
       if(respo) {
         Swal.fire({
           icon: 'success',
-          title: "Posted Successfully",
-          timer: 3000
+          text: "Posted Successfully",
+          timer: 2000
         })
+        setPostTitle("");
+        setPostProjLink("");
+        setContent("");
       }
 
     } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Unexpected Error Occurred',
+        timer: 2000
+      })
       console.log(error);
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -62,10 +75,10 @@ const BlogPost = () => {
         <button
           type="button"
           className="btn btn-accent text-black"
-          disabled={!addPostBtn}
+          disabled={!addPostBtn || saving}
           onClick={addPost}
         >
-          Add Post
+          {saving ? "Saving..." : "Add Post"}
         </button>
       </div>
 

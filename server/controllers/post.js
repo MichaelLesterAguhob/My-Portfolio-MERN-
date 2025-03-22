@@ -3,12 +3,12 @@ const { errorHandler } = require("../authentication");
 
 module.exports.uploadPost = async (req, res) => {
   try {
-    const { postTitle, content, postProjectLink } = req.body;
+    const { postTitle, content, projectLink } = req.body;
 
     const newPost = new Post({
       postTitle: postTitle,
       content: content,
-      postProjectLink: postProjectLink,
+      projectLink: projectLink,
     });
 
     const uploadedPost = await newPost.save();
