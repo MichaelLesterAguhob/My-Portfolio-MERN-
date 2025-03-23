@@ -15,7 +15,7 @@ const projectSchema = mongoose.Schema({
     },
     photos: [
         {
-            path: {
+            link: {
                 type: String,
                 default: null
             }

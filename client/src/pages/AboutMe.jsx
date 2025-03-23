@@ -23,7 +23,7 @@ const AboutMe = () => {
           <a href="#" className="text-blue-500 hover:underline">Full-Stack - On Process</a>
         </div>
 
-        <div className=" h-fit p-2 w-2/4 min-w-[300px] min-h-[250px] max-h-[600px] overflow-auto">
+        <div className=" h-fit p-2 w-2/4 min-w-[300px] min-h-[250px] ">
           <h1 className="p-2 border-b mb-5 tracking-[5px]">EXPERIENCES <span className="text-2xl">📌</span></h1>
           <p>💻 When I was in college, I explored different programming languages such as java, vb.net, and PHP. I've programmed different app such as mini games using java and desktop software with database using vb.</p><br></br>
 
