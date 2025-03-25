@@ -49,7 +49,7 @@ const Navbar = () => {
             className="hover:text-gray-400 hover:underline"
             onClick={closeMenu}
           >
-            AboutMe
+            About
           </NavLink>
           <NavLink
             to="/#skills"
@@ -133,7 +133,7 @@ const Navbar = () => {
           className="block hover:text-gray-400 hover:underline"
           onClick={closeMenu}
         >
-          AboutMe
+          About
         </NavLink>
         <NavLink
           to="/#skills"

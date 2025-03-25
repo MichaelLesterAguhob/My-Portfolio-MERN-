@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 
 const Project = () => {
@@ -12,6 +12,7 @@ const Project = () => {
   const [projectLink, setProjectLink] = useState("");
   const [saving, setSaving] = useState(false);
   const [photos, setPhotos] = useState([]);
+  const fileInput = useRef(null);
 
   const handlePhotosChange = (e) => {
     setPhotos([...e.target.files]);
@@ -19,12 +20,12 @@ const Project = () => {
 
   //DISABLING AND ENABLING ADD PROJECT BUTTON
   useEffect(() => {
-    if (title && description && projectLink) {
+    if (title && description && projectLink && photos.length !== 0) {
       setAddProjBtn(true);
     } else {
       setAddProjBtn(false);
     }
-  }, [title, description, projectLink]);
+  }, [title, description, projectLink, photos]);
 
   // ADDING PROJECT DATA
   const addProject = async (e) => {
@@ -68,6 +69,8 @@ const Project = () => {
         setTitle("");
         setDescription("");
         setProjectLink("");
+        setPhotos([]);
+        fileInput.current.value = "";
       }
     } catch (error) {
       Swal.fire({
@@ -144,6 +147,7 @@ const Project = () => {
           type="file"
           name="photos"
           id="photos"
+          ref={fileInput}
           className="rounded bg-slate-300 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-[97%] p-1 m-1 hover:cursor-pointer"
           multiple
           onChange={handlePhotosChange}
