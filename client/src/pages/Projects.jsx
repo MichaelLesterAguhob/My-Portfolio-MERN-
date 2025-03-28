@@ -24,16 +24,18 @@ const Projects = () => {
       // }))
 
       setProjects(respo.projects)
-
-      console.log(projects);
     } catch (error) {
       console.error(error);
     }
   }
-
+  
   useEffect(() => {
     getProjects();
   }, [])
+  
+  useEffect(() => {
+  console.log(projects)
+  }, [projects])
 
   return (
     <div

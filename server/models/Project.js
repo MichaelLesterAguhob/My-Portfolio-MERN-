@@ -9,7 +9,11 @@ const projectSchema = mongoose.Schema({
         type: String,
         required: [true, 'Description is required']
     },
-    projectLink: {
+    githubLink: {
+        type: String,
+        default: 'None'
+    },
+    liveLink: {
         type: String,
         default: 'None'
     },

@@ -77,7 +77,8 @@ module.exports.uploadProject = async (req, res) => {
     const newProject = new Project({
       title: req.body.title,
       description: req.body.description,
-      projectLink: req.body.projectLink,
+      githubLink: req.body.githubLink,
+      liveLink: req.body.liveLink,
       photos: uploadedImages,
     });
     const savedProject = await newProject.save();

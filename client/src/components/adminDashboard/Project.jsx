@@ -9,7 +9,8 @@ const Project = () => {
   const [addProjBtn, setAddProjBtn] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [projectLink, setProjectLink] = useState("");
+  const [githubLink, setGithubLink] = useState("");
+  const [liveLink, setLiveLink] = useState("");
   const [saving, setSaving] = useState(false);
   const [photos, setPhotos] = useState([]);
   const fileInput = useRef(null);
@@ -20,12 +21,12 @@ const Project = () => {
 
   //DISABLING AND ENABLING ADD PROJECT BUTTON
   useEffect(() => {
-    if (title && description && projectLink && photos.length !== 0) {
+    if (title && description && githubLink && liveLink && photos.length !== 0) {
       setAddProjBtn(true);
     } else {
       setAddProjBtn(false);
     }
-  }, [title, description, projectLink, photos]);
+  }, [title, description, githubLink, liveLink, photos]);
 
   // ADDING PROJECT DATA
   const addProject = async (e) => {
@@ -35,7 +36,8 @@ const Project = () => {
       const formData = new FormData();
       formData.append("title", title.trim());
       formData.append("description", description.trim());
-      formData.append("projectLink", projectLink.trim());
+      formData.append("githubLink", githubLink.trim());
+      formData.append("liveLink", liveLink.trim());
 
       for (const file of photos) {
         formData.append("photos", file);
@@ -68,7 +70,8 @@ const Project = () => {
         });
         setTitle("");
         setDescription("");
-        setProjectLink("");
+        setGithubLink("");
+        setLiveLink("");
         setPhotos([]);
         fileInput.current.value = "";
       }
@@ -112,7 +115,7 @@ const Project = () => {
           onChange={(e) => {
             setTitle(e.target.value);
           }}
-          placeholder="Enter Title"
+          placeholder="Enter title"
         />
 
         <label>Description</label>
@@ -126,20 +129,33 @@ const Project = () => {
           onChange={(e) => {
             setDescription(e.target.value);
           }}
-          placeholder="Enter Description"
+          placeholder="Enter description"
         ></textarea>
 
-        <label>Project Link</label>
+        <label>Github Link</label>
         <input
           type="text"
           name="link"
           id="link"
           className="rounded bg-slate-300 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-[97%] p-1 m-1"
-          value={projectLink}
+          value={githubLink}
           onChange={(e) => {
-            setProjectLink(e.target.value);
+            setGithubLink(e.target.value);
           }}
-          placeholder="Enter Link"
+          placeholder="Enter github link"
+        />
+
+        <label>Live Link</label>
+        <input
+          type="text"
+          name="live-link"
+          id="live-link"
+          className="rounded bg-slate-300 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-[97%] p-1 m-1"
+          value={liveLink}
+          onChange={(e) => {
+            setLiveLink(e.target.value);
+          }}
+          placeholder="Enter live link"
         />
 
         <label>Project Photos</label>
