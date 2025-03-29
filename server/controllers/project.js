@@ -121,7 +121,7 @@ module.exports.updateProject = async (req, res) => {
 };
 
 module.exports.getAllProjects = async (req, res) => {
-  try {
+  try { 
     const projects = await Project.find({});
     if (projects) {
       res.status(200).send({ success: true, projects });
